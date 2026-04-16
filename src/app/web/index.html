@@ -1,0 +1,114 @@
+
+        <!doctype html>
+        <html lang="en">
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Feast Online Feature Ops</title>
+          <link rel="stylesheet" href="./styles.css">
+        </head>
+        <body class="surface-paper">
+          <div class="page layout-folio eyebrow-outline headline-normal modules-3 hero-align-center">
+            <section class="hero">
+              <div class="panel hero-copy">
+                <span class="eyebrow" data-health>Decision Workbench</span>
+                <h1 id="project-title">Feast Online Feature Ops</h1>
+                <p id="project-summary" class="lead">Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.</p>
+                <ul id="project-tags" class="tag-list">
+                  <li>feast</li><li>feature-store</li><li>mlops</li><li>serving</li>
+                </ul>
+              </div>
+              <div class="panel hero-side">
+                <div class="metric-grid">
+                  <article class='card'><span>Model Lift</span><strong>60%</strong><em>+6.4%</em></article>
+<article class='card'><span>Serving P95</span><strong>182ms</strong><em>-12ms</em></article>
+<article class='card'><span>Data Freshness</span><strong>6h</strong><em>steady</em></article>
+                </div>
+                <div class="mini-grid">
+                  <article class='mini-card'><span>Project Type</span><strong>ML</strong></article><article class='mini-card'><span>Domain</span><strong>Feature Platform Engineering</strong></article><article class='mini-card'><span>Application</span><strong>Decision Workbench</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                </div>
+              </div>
+            </section>
+            <section class="app-grid">
+              <article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Workbench 01</span>
+            <h2>Candidate Builder</h2>
+            <p>Evaluate a single candidate, item, or entity against the decision logic.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;features&quot;: {
+    &quot;engagement_score&quot;: 134,
+    &quot;tenure_days&quot;: 366,
+    &quot;payment_miss_count&quot;: 0,
+    &quot;segment&quot;: &quot;consumer&quot;,
+    &quot;priority_flag&quot;: false
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/score" data-input-mode="json">Evaluate Candidate</button>
+          </div>
+          <pre class="js-output">Candidate score and top factors will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Workbench 02</span>
+            <h2>Tradeoff Explorer</h2>
+            <p>Compare multiple operating metrics against a baseline to understand the tradeoffs.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 79.4,
+    &quot;activation&quot;: 68.0,
+    &quot;retention&quot;: 74.8,
+    &quot;revenue&quot;: 134.8
+  },
+  &quot;baseline&quot;: {
+    &quot;acquisition&quot;: 73.05,
+    &quot;activation&quot;: 62.56,
+    &quot;retention&quot;: 68.82,
+    &quot;revenue&quot;: 124.02
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Explore Tradeoffs</button>
+          </div>
+          <pre class="js-output">Tradeoff summary will appear here.</pre>
+        </article>
+<article class="panel module js-module span-wide">
+          <div class="module-header">
+            <span>Workbench 03</span>
+            <h2>Next-Step Planner</h2>
+            <p>Turn the current signals into an implementation-ready next-step recommendation.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for Feast Online Feature Ops.&quot;,
+  &quot;features&quot;: {
+    &quot;engagement_score&quot;: 134,
+    &quot;tenure_days&quot;: 366,
+    &quot;payment_miss_count&quot;: 0,
+    &quot;segment&quot;: &quot;consumer&quot;,
+    &quot;priority_flag&quot;: false
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 79.4,
+    &quot;activation&quot;: 68.0,
+    &quot;retention&quot;: 74.8,
+    &quot;revenue&quot;: 134.8
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Plan Next Step</button>
+          </div>
+          <pre class="js-output">Recommended actions and rationale will appear here.</pre>
+        </article>
+            </section>
+            <footer class="footer">
+              <span>Feature Platform Engineering • ML • Decision Workbench</span>
+              <span>feast-online-feature-ops</span>
+            </footer>
+          </div>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "feast-online-feature-ops", "title": "Feast Online Feature Ops", "project_type": "ml", "domain": "Feature Platform Engineering", "summary": "Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.", "tags": ["feast", "feature-store", "mlops", "serving"]}, "app_archetype": "workbench", "ui_profile": {"layout": "folio", "surface": "paper", "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif", "radius": 20, "shadow": 58, "eyebrow_style": "outline", "module_columns": 3, "hero_align": "center", "headline_mode": "normal"}, "app_modules": [{"label": "Workbench 01", "title": "Candidate Builder", "description": "Evaluate a single candidate, item, or entity against the decision logic.", "endpoint": "/score", "input_mode": "json", "cta": "Evaluate Candidate", "prefill": "{\n  \"features\": {\n    \"engagement_score\": 134,\n    \"tenure_days\": 366,\n    \"payment_miss_count\": 0,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  }\n}", "hint": "Candidate score and top factors will appear here.", "span": "normal"}, {"label": "Workbench 02", "title": "Tradeoff Explorer", "description": "Compare multiple operating metrics against a baseline to understand the tradeoffs.", "endpoint": "/analyze", "input_mode": "json", "cta": "Explore Tradeoffs", "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 79.4,\n    \"activation\": 68.0,\n    \"retention\": 74.8,\n    \"revenue\": 134.8\n  },\n  \"baseline\": {\n    \"acquisition\": 73.05,\n    \"activation\": 62.56,\n    \"retention\": 68.82,\n    \"revenue\": 124.02\n  }\n}", "hint": "Tradeoff summary will appear here.", "span": "normal"}, {"label": "Workbench 03", "title": "Next-Step Planner", "description": "Turn the current signals into an implementation-ready next-step recommendation.", "endpoint": "/recommend", "input_mode": "json", "cta": "Plan Next Step", "prefill": "{\n  \"prompt\": \"Recommend the next best action for Feast Online Feature Ops.\",\n  \"features\": {\n    \"engagement_score\": 134,\n    \"tenure_days\": 366,\n    \"payment_miss_count\": 0,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 79.4,\n    \"activation\": 68.0,\n    \"retention\": 74.8,\n    \"revenue\": 134.8\n  }\n}", "hint": "Recommended actions and rationale will appear here.", "span": "wide"}], "sample_features": {"engagement_score": 134, "tenure_days": 366, "payment_miss_count": 0, "segment": "consumer", "priority_flag": false}, "sample_metrics": {"acquisition": 79.4, "activation": 68.0, "retention": 74.8, "revenue": 134.8}, "knowledge_base": ["Feast Online Feature Ops is positioned as a Feature Platform Engineering starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on feast, feature-store, mlops, serving.", "Source paper: Feast", "Official repo: https://github.com/feast-dev/feast", "Production differentiation focus: Turn upstream feature platform engineering capabilities into a production-style application with operations-facing workflows.; Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.; Connect model behavior to concrete business decisions so the project is easier to evaluate and present."], "dashboard_metrics": [{"label": "Model Lift", "value": "60%", "delta": "+6.4%"}, {"label": "Serving P95", "value": "182ms", "delta": "-12ms"}, {"label": "Data Freshness", "value": "6h", "delta": "steady"}]}</script>
+          <script src="./app.js"></script>
+        </body>
+        </html>

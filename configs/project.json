@@ -1,0 +1,117 @@
+{
+  "slug": "feast-online-feature-ops",
+  "title": "Feast Online Feature Ops",
+  "project_type": "ml",
+  "domain": "Feature Platform Engineering",
+  "summary": "Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.",
+  "tags": [
+    "feast",
+    "feature-store",
+    "mlops",
+    "serving"
+  ],
+  "accent": "#602cc8",
+  "secondary_accent": "#a96b2c",
+  "dashboard_metrics": [
+    {
+      "label": "Model Lift",
+      "value": "60%",
+      "delta": "+6.4%"
+    },
+    {
+      "label": "Serving P95",
+      "value": "182ms",
+      "delta": "-12ms"
+    },
+    {
+      "label": "Data Freshness",
+      "value": "6h",
+      "delta": "steady"
+    }
+  ],
+  "sample_features": {
+    "engagement_score": 134,
+    "tenure_days": 366,
+    "payment_miss_count": 0,
+    "segment": "consumer",
+    "priority_flag": false
+  },
+  "sample_metrics": {
+    "acquisition": 79.4,
+    "activation": 68.0,
+    "retention": 74.8,
+    "revenue": 134.8
+  },
+  "knowledge_base": [
+    "Feast Online Feature Ops is positioned as a Feature Platform Engineering starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on feast, feature-store, mlops, serving.",
+    "Source paper: Feast",
+    "Official repo: https://github.com/feast-dev/feast",
+    "Production differentiation focus: Turn upstream feature platform engineering capabilities into a production-style application with operations-facing workflows.; Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.; Connect model behavior to concrete business decisions so the project is easier to evaluate and present."
+  ],
+  "research_key": "feast-online-feature-ops",
+  "research_score": 9.685,
+  "paper_title": "Feast",
+  "paper_url": "https://github.com/feast-dev/feast",
+  "repo_url": "https://github.com/feast-dev/feast",
+  "repo_org": "feast-dev",
+  "why_high_score": [
+    "Official or primary upstream repo with 6964 GitHub stars.",
+    "Active maintenance signal with recent push at 2026-04-15T20:53:33Z.",
+    "The Open Source Feature Store for AI/ML"
+  ],
+  "differentiation_hooks": [
+    "Turn upstream feature platform engineering capabilities into a production-style application with operations-facing workflows.",
+    "Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.",
+    "Connect model behavior to concrete business decisions so the project is easier to evaluate and present."
+  ],
+  "app_archetype": "workbench",
+  "ui_profile": {
+    "layout": "folio",
+    "surface": "paper",
+    "font_stack": "\"Manrope\", \"Segoe UI\", sans-serif",
+    "radius": 20,
+    "shadow": 58,
+    "eyebrow_style": "outline",
+    "module_columns": 3,
+    "hero_align": "center",
+    "headline_mode": "normal"
+  },
+  "app_modules": [
+    {
+      "label": "Workbench 01",
+      "title": "Candidate Builder",
+      "description": "Evaluate a single candidate, item, or entity against the decision logic.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Evaluate Candidate",
+      "prefill": "{\n  \"features\": {\n    \"engagement_score\": 134,\n    \"tenure_days\": 366,\n    \"payment_miss_count\": 0,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  }\n}",
+      "hint": "Candidate score and top factors will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Workbench 02",
+      "title": "Tradeoff Explorer",
+      "description": "Compare multiple operating metrics against a baseline to understand the tradeoffs.",
+      "endpoint": "/analyze",
+      "input_mode": "json",
+      "cta": "Explore Tradeoffs",
+      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 79.4,\n    \"activation\": 68.0,\n    \"retention\": 74.8,\n    \"revenue\": 134.8\n  },\n  \"baseline\": {\n    \"acquisition\": 73.05,\n    \"activation\": 62.56,\n    \"retention\": 68.82,\n    \"revenue\": 124.02\n  }\n}",
+      "hint": "Tradeoff summary will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Workbench 03",
+      "title": "Next-Step Planner",
+      "description": "Turn the current signals into an implementation-ready next-step recommendation.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Plan Next Step",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for Feast Online Feature Ops.\",\n  \"features\": {\n    \"engagement_score\": 134,\n    \"tenure_days\": 366,\n    \"payment_miss_count\": 0,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 79.4,\n    \"activation\": 68.0,\n    \"retention\": 74.8,\n    \"revenue\": 134.8\n  }\n}",
+      "hint": "Recommended actions and rationale will appear here.",
+      "span": "wide"
+    }
+  ]
+}

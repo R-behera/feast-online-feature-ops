@@ -1,0 +1,9 @@
+
+services:
+  api:
+    build: .
+    image: feast-online-feature-ops:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.example
