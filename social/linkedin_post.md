@@ -1,19 +1,16 @@
-Today I shipped **Feast Online Feature Ops**, a research-backed Feature Platform Engineering project inspired by **Feast**.
+Shipped **Real-Time Pricing Feature Platform** today.
 
-        What I changed from the base research or repo:
-        1. Turn upstream feature platform engineering capabilities into a production-style application with operations-facing workflows.
-2. Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.
-3. Connect model behavior to concrete business decisions so the project is easier to evaluate and present.
+This one is built around a real workflow for **Pricing science and ML platform teams**.
 
-I also reviewed the upstream repo and focused on gaps like: No obvious tests directory or test files detected.
+Problem:
+Pricing models degrade when online features become stale or drift away from the offline training view.
 
-        Why it matters:
-        - easier to demo
-        - easier to operate
-        - easier to explain to product, analytics, and engineering teams
+What it helps decide:
+Keep pricing features fresh enough for ranking and price optimization models to act safely.
 
-        Repo: https://github.com/R-behera/feast-online-feature-ops
-        Paper: https://github.com/feast-dev/feast
-        Screenshot: demo/screenshot.png
+Why that matters:
+Improve feature freshness and pricing decision quality.
 
-        #feast #featurestore #mlops #serving #AI #MachineLearning #LLM #DataScience
+Repo: https://github.com/R-behera/feast-online-feature-ops
+
+#pricing #featurestore #mlops #commerce #AI #MachineLearning #DataScience

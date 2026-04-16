@@ -1,71 +1,52 @@
 {
   "slug": "feast-online-feature-ops",
-  "title": "Feast Online Feature Ops",
+  "title": "Real-Time Pricing Feature Platform",
   "project_type": "ml",
-  "domain": "Feature Platform Engineering",
-  "summary": "Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.",
+  "domain": "Commerce ML Platform",
+  "summary": "Serve low-latency pricing and demand features to ranking and pricing models while tracking freshness and training-serving consistency.",
   "tags": [
-    "feast",
+    "pricing",
     "feature-store",
     "mlops",
-    "serving"
+    "commerce"
   ],
   "accent": "#602cc8",
   "secondary_accent": "#a96b2c",
   "dashboard_metrics": [
     {
-      "label": "Model Lift",
-      "value": "60%",
-      "delta": "+6.4%"
+      "label": "Freshness SLA",
+      "value": "96%",
+      "delta": "+4.4%"
     },
     {
-      "label": "Serving P95",
-      "value": "182ms",
-      "delta": "-12ms"
+      "label": "Train/Serve Match",
+      "value": "94%",
+      "delta": "+3.2%"
     },
     {
-      "label": "Data Freshness",
-      "value": "6h",
-      "delta": "steady"
+      "label": "Margin Lift",
+      "value": "5%",
+      "delta": "+1.4%"
     }
   ],
   "sample_features": {
-    "engagement_score": 134,
-    "tenure_days": 366,
-    "payment_miss_count": 0,
-    "segment": "consumer",
-    "priority_flag": false
+    "sku": "SKU-1842",
+    "inventory_velocity": 0.72,
+    "competitor_price_gap": -0.04,
+    "freshness_minutes": 7,
+    "demand_spike": true
   },
   "sample_metrics": {
-    "acquisition": 79.4,
-    "activation": 68.0,
-    "retention": 74.8,
-    "revenue": 134.8
+    "freshness_sla": 0.96,
+    "training_serving_match": 0.94,
+    "margin_lift": 0.05,
+    "fallback_rate": 0.08
   },
   "knowledge_base": [
-    "Feast Online Feature Ops is positioned as a Feature Platform Engineering starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
-    "The primary value proposition is: Build an online feature operations surface with freshness tracking, store visibility, and training-serving consistency checks.",
-    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
-    "Typical stakeholders include analytics, operations, product, and leadership teams working on feast, feature-store, mlops, serving.",
-    "Source paper: Feast",
-    "Official repo: https://github.com/feast-dev/feast",
-    "Production differentiation focus: Turn upstream feature platform engineering capabilities into a production-style application with operations-facing workflows.; Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.; Connect model behavior to concrete business decisions so the project is easier to evaluate and present."
-  ],
-  "research_key": "feast-online-feature-ops",
-  "research_score": 9.685,
-  "paper_title": "Feast",
-  "paper_url": "https://github.com/feast-dev/feast",
-  "repo_url": "https://github.com/feast-dev/feast",
-  "repo_org": "feast-dev",
-  "why_high_score": [
-    "Official or primary upstream repo with 6964 GitHub stars.",
-    "Active maintenance signal with recent push at 2026-04-15T20:53:33Z.",
-    "The Open Source Feature Store for AI/ML"
-  ],
-  "differentiation_hooks": [
-    "Turn upstream feature platform engineering capabilities into a production-style application with operations-facing workflows.",
-    "Add deployment packaging, monitoring hooks, and screenshot-ready demos instead of notebook-only output.",
-    "Connect model behavior to concrete business decisions so the project is easier to evaluate and present."
+    "User: pricing science and ML platform teams.",
+    "Primary pain: online pricing features drift or go stale before the model can act.",
+    "Decision output: refresh, fallback, or release feature updates to production models.",
+    "Business impact: better pricing quality and more reliable real-time decisions."
   ],
   "app_archetype": "workbench",
   "ui_profile": {
@@ -81,37 +62,37 @@
   },
   "app_modules": [
     {
-      "label": "Workbench 01",
-      "title": "Candidate Builder",
-      "description": "Evaluate a single candidate, item, or entity against the decision logic.",
+      "label": "Price 01",
+      "title": "Feature Freshness Score",
+      "description": "Score the readiness of a real-time feature vector before pricing inference.",
       "endpoint": "/score",
       "input_mode": "json",
-      "cta": "Evaluate Candidate",
-      "prefill": "{\n  \"features\": {\n    \"engagement_score\": 134,\n    \"tenure_days\": 366,\n    \"payment_miss_count\": 0,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  }\n}",
-      "hint": "Candidate score and top factors will appear here.",
+      "cta": "Score Features",
+      "prefill": "{\n  \"features\": {\n    \"sku\": \"SKU-1842\",\n    \"inventory_velocity\": 0.72,\n    \"competitor_price_gap\": -0.04,\n    \"freshness_minutes\": 7\n  }\n}",
+      "hint": "Feature readiness appears here.",
       "span": "normal"
     },
     {
-      "label": "Workbench 02",
-      "title": "Tradeoff Explorer",
-      "description": "Compare multiple operating metrics against a baseline to understand the tradeoffs.",
+      "label": "Price 02",
+      "title": "Consistency Review",
+      "description": "Compare the online feature view against the last offline training snapshot.",
       "endpoint": "/analyze",
       "input_mode": "json",
-      "cta": "Explore Tradeoffs",
-      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 79.4,\n    \"activation\": 68.0,\n    \"retention\": 74.8,\n    \"revenue\": 134.8\n  },\n  \"baseline\": {\n    \"acquisition\": 73.05,\n    \"activation\": 62.56,\n    \"retention\": 68.82,\n    \"revenue\": 124.02\n  }\n}",
-      "hint": "Tradeoff summary will appear here.",
-      "span": "normal"
+      "cta": "Review Match",
+      "prefill": "{\n  \"metrics\": {\n    \"freshness_sla\": 96.0,\n    \"training_serving_match\": 94.0,\n    \"fallback_rate\": 8.0\n  },\n  \"baseline\": {\n    \"freshness_sla\": 91.6,\n    \"training_serving_match\": 90.8,\n    \"fallback_rate\": 10.4\n  }\n}",
+      "hint": "Consistency review appears here.",
+      "span": "wide"
     },
     {
-      "label": "Workbench 03",
-      "title": "Next-Step Planner",
-      "description": "Turn the current signals into an implementation-ready next-step recommendation.",
+      "label": "Price 03",
+      "title": "Platform Memo",
+      "description": "Draft the next action for the pricing platform and merchandising teams.",
       "endpoint": "/recommend",
       "input_mode": "json",
-      "cta": "Plan Next Step",
-      "prefill": "{\n  \"prompt\": \"Recommend the next best action for Feast Online Feature Ops.\",\n  \"features\": {\n    \"engagement_score\": 134,\n    \"tenure_days\": 366,\n    \"payment_miss_count\": 0,\n    \"segment\": \"consumer\",\n    \"priority_flag\": false\n  },\n  \"metrics\": {\n    \"acquisition\": 79.4,\n    \"activation\": 68.0,\n    \"retention\": 74.8,\n    \"revenue\": 134.8\n  }\n}",
-      "hint": "Recommended actions and rationale will appear here.",
-      "span": "wide"
+      "cta": "Draft Action",
+      "prefill": "{\n  \"prompt\": \"Write the feature freshness action memo for pricing operations.\",\n  \"features\": {\n    \"sku\": \"SKU-1842\",\n    \"demand_spike\": true\n  },\n  \"metrics\": {\n    \"freshness_sla\": 0.96,\n    \"margin_lift\": 0.05\n  }\n}",
+      "hint": "Platform action memo appears here.",
+      "span": "normal"
     }
   ]
 }
